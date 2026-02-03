@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:for_prof/common/ui/theme/theme_with_notifier.dart';
 import 'package:for_prof/feature/auth/widget/login_page.dart';
 import 'package:for_prof/feature/home_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -17,7 +18,7 @@ class AuthGuard extends StatelessWidget {
         final session = snapshot.hasData ? snapshot.data?.session : null;
 
         if (session != null) {
-          return HomeScreen();
+          return HomeScreen(themeWithNotifier: ThemeWithNotifier(),);
         } else {
           return LoginPage();
         }

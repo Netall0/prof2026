@@ -10,8 +10,6 @@ import 'package:for_prof/my_app.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 //global
-final ThemeWithNotifier themeWithNotifier = ThemeWithNotifier();
-
 void main(List<String> args) {
   runZonedGuarded(() {
     L.load();
@@ -22,7 +20,9 @@ void main(List<String> args) {
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhqZ3pjbHVyeWhoeHdvbWVsdXJkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5Mjg3NTAsImV4cCI6MjA4NTUwNDc1MH0.LORSKbAX1W_NF5bAXy_dqgd8adzGRu43VnDcgDcqIvk',
         url: 'https://xjgzcluryhhxwomelurd.supabase.co',
       );
-      runApp(MyApp());
+      final ThemeWithNotifier themeWithNotifier = ThemeWithNotifier();
+
+      runApp(MyApp(themeWithNotifier: themeWithNotifier,));
     } on Object catch (e) {}
   }, (error, st) {});
 }

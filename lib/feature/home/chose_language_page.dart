@@ -19,15 +19,18 @@ class _ChoseLanguagePageState extends State<ChoseLanguagePage> {
       body: Column(
         children: [
           ListTile(
-            onTap: () {
+            onTap: () async {
               L.change('ru');
-              MyApp
+              myAppKey.currentState?.rebuild();
+              Navigator.pop(context);
             },
             title: Text('Russia'),
           ),
           ListTile(
-            onTap: () {
+            onTap: () async {
               L.change('en');
+              myAppKey.currentState?.rebuild();
+              Navigator.pop(context);
             },
             title: Text('English  '),
           ),

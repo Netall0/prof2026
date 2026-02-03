@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:for_prof/common/localization/l10n.dart';
+import 'package:for_prof/common/ui/theme/theme_with_notifier.dart';
 import 'package:for_prof/feature/home/chose_language_page.dart';
 import 'package:for_prof/main.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key,required this.themeWithNotifier});
+
+  ThemeWithNotifier themeWithNotifier;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -18,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: InkWell(
           onTap: () {
-            themeWithNotifier.setTheme();
+            widget.themeWithNotifier.setTheme();
             ScaffoldMessenger.of(
               context,
             ).showSnackBar(SnackBar(content: Text('алах')));
